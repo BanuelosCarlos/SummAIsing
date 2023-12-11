@@ -4,7 +4,7 @@
 
 ## Introduction
 ------------
-This tool is intended to help people to summarize and chat to a bot that asnwers questions about Youtube videos that you provide.
+This tool is intended to help people to summarize and chat to a bot that answers questions about Youtube videos that you provide.
 - It retrieves the main topic
 - Summarizes the content of the video
 - Returns keywords
@@ -18,8 +18,8 @@ This tool work as follows:
 2. It downloads the audio locally
 3. The it uses the OpenAI api to call Whisper-1 and transforms the audio to text
 4. The promt to ChatGPT3.5 model to give details of the text
-5. Also the extracted text then is splitted in smaller chunks to create a vector store (uses OpenAI embeddings)
-6. It uses the vector store as a kwoledge base to anwers questions with ChatGPT3.5 model
+5. Also the extracted text then is splitted in smaller chunks to create a vector store (uses OpenAI embedding)
+6. It uses the vector store as a knowledge base to answers questions with ChatGPT3.5 model
 
 ## Dependencies and Installation
 ----------------------------
