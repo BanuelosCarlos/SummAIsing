@@ -43,7 +43,7 @@ To use the SummAIsing tool you need to:
 
 2. Run the `main.py` file using the Streamlit CLI. Execute the following command:
    ```
-   streamlit run main.py
+   streamlit run capstone_project/main.py
    ```
 
 3. The application will launch in your default web browser, displaying the user interface.
