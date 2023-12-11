@@ -1,58 +1,62 @@
-
-# Table of Contents
-
-1.  [ChatGPT-Sprint](#org456b8a5)
-    1.  [Getting Started](#org434262c)
-    2.  [The Challenge](#org225987d)
-    3.  [Resources](#org0a0f0b0)
-    4.  [Contributing](#orgbb6c879)
-    5.  [License](#orga77384e)
+# MultiPDF Chat App
 
 
 
-<a id="org456b8a5"></a>
+## Introduction
+------------
+This tool is intended to help people to summarize and chat to a bot that asnwers questions about Youtube videos that you provide.
+- It retrieves the main topic
+- Summarizes the content of the video
+- Returns keywords
+- Then you can ask questions about the content of the video
 
-# ChatGPT-Sprint
+## How It Works
+------------
+This tool work as follows:
 
-Welcome to &ldquo;ChatGPT-Sprint&rdquo;. This is your gateway to understanding and integrating the ChatGPT API. By the end of this sprint, you&rsquo;ll have built a unique tool that taps into the power of ChatGPT, merging creativity with technical know-how.
+1. You provide a Youtube URL (Which audio is smaller than 20 MB)
+2. It downloads the audio locally
+3. The it uses the OpenAI api to call Whisper-1 and transforms the audio to text
+4. The promt to ChatGPT3.5 model to give details of the text
+5. Also the extracted text then is splitted in smaller chunks to create a vector store (uses OpenAI embeddings)
+6. It uses the vector store as a kwoledge base to anwers questions with ChatGPT3.5 model
 
+## Dependencies and Installation
+----------------------------
+To install the SummAIsing tool please follow this steps:
 
-<a id="org434262c"></a>
+1. Clone this repository to your local.
 
-## Getting Started
+2. Run the makefile in the terminal isnide the project folder (This will install the venv with the python version and the requirements)
+   ```commandline
+   make
+   ```
+4. Obtain an API key from OpenAI and add it to the `.env` file in the project directory.
+```commandline
+OPENAI_API_KEY=your_secrit_api_key
+```
 
-Before diving into the challenge, ensure you have the following prerequisites:
+## Usage
+-----
+To use the SummAIsing tool you need to:
 
--   Basic knowledge of Python (or your preferred language supported by the ChatGPT API).
--   An environment set up for development (e.g., Python environment, code editor).
--   An OpenAI API key (obtainable from [OpenAI&rsquo;s platform](https://www.openai.com/)).
+1. Be sure that you installed the dependencien and set yoy OpenAI api key in the `.env` file
 
+2. Run the `main.py` file using the Streamlit CLI. Execute the following command:
+   ```
+   streamlit run app.py
+   ```
 
-<a id="org225987d"></a>
+3. The application will launch in your default web browser, displaying the user interface.
 
-## The Challenge
+4. Copy and paste the Youtube's URL that you want to the box in the interface and press 'Proccess'.
 
-Your task is to create an application or tool that effectively utilizes the ChatGPT API. The specifics of the project are up to you, but remember, the goal is innovation and effective integration.
+5. Now you recieve the summarization and also you can chat with the bot to know more about the video.
 
-For detailed project guidelines, refer to [README](./capstone_project/README.md)
+## Aknowledments and references
+Thanks for all the AI content creator, to Wizeline Academy for this sprint and all your effort
+Based on [YouTube](https://youtu.be/dXxQ0LR-3Hg).
 
-
-<a id="org0a0f0b0"></a>
-
-## Resources
-
--   [ChatGPT Official Documentation](https://beta.openai.com/docs/)
--   [OpenAI&rsquo;s API pricing and rate limits](https://openai.com/pricing)
-
-
-<a id="orgbb6c879"></a>
-
-## Contributing
-
-We value your contributions! If you have suggestions, corrections, or improvements, please submit a pull request or open an issue. Ensure you follow our contribution guidelines listed in [CONTRIBUTING](./CONTRIBUTING.md)
-
-
-<a id="orga77384e"></a>
 
 ## License
 
