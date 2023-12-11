@@ -35,7 +35,6 @@ To install the SummAIsing tool please follow this steps:
    ```commandline
    OPENAI_API_KEY=your_secrit_api_key
    ```
-
 ## Usage
 -----
 To use the SummAIsing tool you need to:
